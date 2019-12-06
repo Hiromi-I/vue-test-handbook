@@ -17,15 +17,15 @@ describe("Child", () => {
     const shallowWrapper = shallowMount(Child)
     const mountWrapper = mount(Child)
 
-    console.log(shallowWrapper.html())
-    console.log(mountWrapper.html())
+    // console.log(shallowWrapper.html())
+    // console.log(mountWrapper.html())
   })
 
   it("console parent", () => {
     const shallowWrapper = shallowMount(Parent)
     const mountWrapper = mount(Parent)
 
-    console.log(shallowWrapper.html())
-    console.log(mountWrapper.html())
+    // console.log(shallowWrapper.html())
+    // console.log(mountWrapper.html())
   })
 })
