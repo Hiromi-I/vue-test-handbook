@@ -40,5 +40,7 @@ describe("FormSubmitter", () => {
     await flushPromises()
 
     expect(wrapper.find(".message").text()).toBe("aliceさん、お問い合わせ、ありがとうございます。")
+    expect(url).toBe("/api/v1/register")
+    expect(data).toEqual({ username: "alice" })
   })
 })
