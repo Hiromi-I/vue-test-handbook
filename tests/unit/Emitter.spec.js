@@ -6,7 +6,7 @@ describe("Emitter", () => {
     const wrapper = shallowMount(Emitter)
 
     wrapper.vm.emitEvent()
-
-    console.log(wrapper.emitted())
+    
+    expect(wrapper.emitted().myEvent[0]).toEqual(["name", "password"])
   })
 })
