@@ -9,4 +9,13 @@ describe("Emitter", () => {
     
     expect(wrapper.emitted().myEvent[0]).toEqual(["name", "password"])
   })
+
+  it("コンポーネントをレンダーせずにイベントを検証する", () => {
+    const events = {}
+    const $emit = (event, ...args) => { events[event] = [...args] }
+
+    Emitter.methods.emitEvent.call({ $emit })
+
+    expect(events.myEvent).toEqual(["name", "password"])
+  })
 })
