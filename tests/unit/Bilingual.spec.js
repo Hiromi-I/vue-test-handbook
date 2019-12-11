@@ -3,10 +3,7 @@ import Bilingual from "@/components/Bilingual.vue"
 
 describe("Bilingual", () => {
   it("renders successfully", () => {
-    const wrapper = shallowMount(Bilingual, {
-      mocks: {
-        $t: (msg) => msg
-      }
-    })
+    const wrapper = shallowMount(Bilingual)
+    expect(wrapper.find(".hello").text()).toBe("こんにちは、世界！")
   })
 })
