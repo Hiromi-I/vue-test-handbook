@@ -24,4 +24,14 @@ describe("Parent", () => {
   
     expect(wrapper.find(Child).exists()).toBe(false)
   })
+
+  it("renders a Child component", () => {
+    const wrapper = shallowMount(Parent, {
+      data() {
+        return { showChild: true }
+      }
+    })
+  
+    expect(wrapper.find({ name: "Child" }).exists()).toBe(true)
+  })
 })
