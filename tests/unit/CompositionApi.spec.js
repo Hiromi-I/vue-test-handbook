@@ -1,26 +1,9 @@
-import { shallowMount } from "@vue/test-utils"
+import { shallowMount } from "@vue/test-utils";
 
-import CompositionApi from "@/components/CompositionApi.vue"
+import CompositionApi from "@/components/CompositionApi.vue";
 
 describe("CompositionApi", () => {
-  it("renders a message", () => {
-    const wrapper = shallowMount(CompositionApi, {
-      propsData: {
-        message: "Testing the composition API"
-      }
-    })
+  it("renders a message", () => {});
 
-    expect(wrapper.find(".message").text()).toBe("TESTING THE COMPOSITION API")
-  })
-
-  it("increments a count when button is clicked", async () => {
-    const wrapper = shallowMount(CompositionApi, {
-      propsData: { message: '' }
-    })
-
-    wrapper.find("button").trigger("click")
-    wrapper.vm.$nextTick()
-
-    expect(wrapper.find(".count").text()).toBe("Count: 1")
-  })
-})
+  it("increments a count when button is clicked", () => {});
+});

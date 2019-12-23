@@ -1,34 +1,10 @@
-import { beforeEach } from "@/router.js"
-import mockModule from "@/bust-cache.js"
-
-jest.mock("@/bust-cache.js", () => ({ bustCache: jest.fn() }))
+import { beforeEach } from "@/router.js";
+import mockModule from "@/bust-cache.js";
 
 describe("beforeEach", () => {
-  afterEach(() => {
-    mockModule.bustCache.mockClear()
-  })
+  afterEach(() => {});
 
-  it("busts the cache when going to /user", () => {
-    const to = {
-      matched: [{ meta: { shouldBustCache: true } }]
-    }
-    const next = jest.fn()
+  it("busts the cache when going to /user", () => {});
 
-    beforeEach(to, undefined, next)
-
-    expect(mockModule.bustCache).toHaveBeenCalled()
-    expect(next).toHaveBeenCalled()
-  })
-
-  it("busts the cache when going to /user", () => {
-    const to = {
-      matched: [{ meta: { shouldBustCache: false } }]
-    }
-    const next = jest.fn()
-
-    beforeEach(to, undefined, next)
-
-    expect(mockModule.bustCache).not.toHaveBeenCalled()
-    expect(next).toHaveBeenCalled()
-  })
-})
+  it("busts the cache when going to /user", () => {});
+});
