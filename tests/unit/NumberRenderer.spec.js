@@ -10,5 +10,9 @@ describe("NumberRenderer", () => {
     expect(wrapper.text()).toBe("2, 4, 6, 8");
   });
 
-  it("奇数をレンダー", () => {});
+  it("奇数をレンダー", () => {
+    expect(NumberRenderer.computed.numbers.call({ even: false })).toBe(
+      "1, 3, 5, 7, 9"
+    );
+  });
 });
