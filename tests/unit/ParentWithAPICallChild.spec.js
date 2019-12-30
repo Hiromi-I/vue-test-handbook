@@ -3,7 +3,15 @@ import ParentWithAPICallChild from "@/components/ParentWithAPICallChild.vue";
 import ComponentWithAsyncCall from "@/components/ComponentWithAsyncCall.vue";
 
 describe("ParentWithAPICallChild", () => {
-  it("renders with mount and does initialize API call", () => {});
+  it("renders with mount and does initialize API call", () => {
+    const wrapper = mount(ParentWithAPICallChild, {
+      stubs: { ComponentWithAsyncCall: true }
+    });
+    expect(wrapper.find(ComponentWithAsyncCall).exists()).toBe(true);
+  });
 
-  it("renders with shallowMount and does not initialize API call", () => {});
+  it("renders with shallowMount and does not initialize API call", () => {
+    const wrapper = shallowMount(ParentWithAPICallChild);
+    expect(wrapper.find(ComponentWithAsyncCall).exists()).toBe(true);
+  });
 });
