@@ -10,5 +10,8 @@ describe("ParentWithAPICallChild", () => {
     expect(wrapper.find(ComponentWithAsyncCall).exists()).toBe(true);
   });
 
-  it("renders with shallowMount and does not initialize API call", () => {});
+  it("renders with shallowMount and does not initialize API call", () => {
+    const wrapper = shallowMount(ParentWithAPICallChild);
+    expect(wrapper.find(ComponentWithAsyncCall).exists()).toBe(true);
+  });
 });
