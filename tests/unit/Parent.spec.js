@@ -18,7 +18,11 @@ describe("Parent", () => {
     expect(wrapper.find("span").isVisible()).toBe(true);
   });
 
-  it("does not render a Child component", () => {});
+  it("does not render a Child component", () => {
+    const wrapper = shallowMount(Parent);
+
+    expect(wrapper.find(Child).exists()).toBe(false);
+  });
 
   it("renders a Child component", () => {});
 });
